@@ -77,7 +77,6 @@ map <Leader>h :History<CR>
 " CtrlP use FZF (faster!)
 nnoremap <C-p> :Files<Cr>
 
-syntax on
 autocmd Filetype scss if getfsize(@%) > 300 | setlocal syntax=OFF | endif
 
 
