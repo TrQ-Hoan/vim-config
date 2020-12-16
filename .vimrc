@@ -1,5 +1,9 @@
 syntax on
 set t_Co=256
+scriptencoding utf-8
+set encoding=utf-8
+
+" Fix ^M in linux: perl -p -i -e "s/\r//g" ~/.vimrc
 
 "-------------------------------------------------------------------------------
 "	My map
