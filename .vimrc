@@ -6,7 +6,7 @@ set encoding=utf-8
 " Fix ^M in linux: perl -p -i -e "s/\r//g" ~/.vimrc
 
 "---------------------
-"	my map
+"	Custom Mapping
 "---------------------
 map <silent><F2> :source %<CR>
 map <silent><F9> :NERDTreeToggle<CR>
@@ -29,7 +29,7 @@ set softtabstop=4
 set autoindent
 "---------------------
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.vim/plugged') " '~/.vim/plugged' is path of folder vim-plug
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-github-dashboard'
