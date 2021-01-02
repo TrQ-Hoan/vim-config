@@ -5,18 +5,19 @@ set encoding=utf-8
 
 " Fix ^M in linux: perl -p -i -e "s/\r//g" ~/.vimrc
 
-"-------------------------------------------------------------------------------
-"	My map
-"-------------------------------------------------------------------------------
+"---------------------
+"	my map
+"---------------------
 map <silent><F2> :source %<CR>
 map <silent><F9> :NERDTreeToggle<CR>
+inoremap <C-z> <esc>:u<cr>                 " undo
+nnoremap <C-z> :u<cr>
 inoremap <C-s> <esc>:w!<cr>                 " save files
 nnoremap <C-s> :w!<cr>
 inoremap <C-q> <esc>:wq!<cr>               " save and exit
 nnoremap <C-q> :wq!<cr>
 inoremap <C-x> <esc>:qa!<cr>               " quit discarding changes
 nnoremap <C-x> :qa!<cr>
-"map <C-x> <C-w>q
 map <C-h> <C-w>h
 map <C-l> <C-w>l
 map <C-k> <C-w>k
@@ -28,7 +29,7 @@ set softtabstop=4
 set autoindent
 "---------------------
 
-call plug#begin('~/.vim/plugged') " '~/.vim/plugged' is path of folder vim-plug
+call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-github-dashboard'
@@ -38,6 +39,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf'
 Plug 'mhinz/vim-signify'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "theme
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'morhetz/gruvbox'
@@ -64,7 +66,7 @@ let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.linenr = '☰ '
 let g:airline_symbols.maxlinenr = '㏑'
 let g:airline_symbols.dirty='⚡'
 let g:airline_symbols.whitespace = 'Ξ'
@@ -81,6 +83,7 @@ map <Leader>h :History<CR>
 " CtrlP use FZF (faster!)
 nnoremap <C-p> :Files<Cr>
 
+"syntax on
 autocmd Filetype scss if getfsize(@%) > 300 | setlocal syntax=OFF | endif
 
 
