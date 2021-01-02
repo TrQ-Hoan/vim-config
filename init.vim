@@ -12,25 +12,26 @@ map <A-h> <C-W>h
 map <A-j> <C-W>j
 map <A-k> <C-W>k
 map <A-l> <C-W>l
-"map <C-x> <C-w>q
 
 call plug#begin('~/AppData/Local/nvim/plugged') " '~/AppData/Local/nvim/plugged' is path of folder vim-plug
+Plug 'scrooloose/nerdtree'
 Plug 'VundleVim/Vundle.vim'
 Plug 'vim-syntastic/syntastic'
-Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'junegunn/fzf'
 Plug 'mhinz/vim-signify'
-Plug 'Raimondi/delimitMate'
+Plug 'junegunn/fzf'
+Plug 'jiangmiao/auto-pairs'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'majutsushi/tagbar'
 Plug 'Yggdroot/indentLine'
 Plug 'octol/vim-cpp-enhanced-highlight'
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'vim-scripts/OmniCppComplete'
+Plug 'vim-scripts/OmniCppComplete'
+" Plug 'ycm-core/YouCompleteMe'
+" Plug 'Raimondi/delimitMate'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'phanviet/vim-monokai-pro'
 Plug 'morhetz/gruvbox'
 Plug 'arzg/vim-colors-xcode'
@@ -39,7 +40,7 @@ call plug#end()
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#hunks#enabled = 1
 let g:airline#extensions#branch#enabled = 1
-let g:airline_theme='dark'
+let g:airline_theme = 'solarized_flood' " seoul256
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
@@ -55,19 +56,21 @@ let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.linenr = '☰'
-let g:airline_symbols.maxlinenr = '㏑'
-let g:airline_symbols.dirty='⚡'
+let g:airline_symbols.linenr = '= '
+" let g:airline_symbols.maxlinenr = '㏑'
+" let g:airline_symbols.dirty='⚡'
 let g:airline_symbols.whitespace = 'Ξ'
+
 
 let g:conoline_color_normal_light = "ctermbg=240"
 let g:conoline_color_normal_nr_light = "ctermbg=240 ctermfg=white"
 let g:conoline_color_insert_light = "ctermbg=black"
 let g:conoline_color_insert_nr_light = "ctermbg=red"
 
-set expandtab
-set shiftwidth=4
-set softtabstop=4
+"set expandtab
+"set shiftwidth=1
+"set softtabstop=1
+set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 set autoindent
 
 set statusline+=%#warningmsg#
@@ -87,12 +90,20 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 
 map <silent><F2> :source %<CR>
 map <silent><F9> :NERDTreeToggle<CR>
-inoremap <C-s> <esc>:w!<cr>                 " save files
+nnoremap <c-z> :u<CR>						" undo
+inoremap <c-z> <c-o>:u<CR>
+inoremap <C-s> <esc>:w!<cr>					" save files
 nnoremap <C-s> :w!<cr>
-inoremap <C-q> <esc>:wq!<cr>               " save and exit
+inoremap <C-q> <esc>:wq!<cr>				" save and exit
 nnoremap <C-q> :wq!<cr>
-inoremap <C-x> <esc>:qa!<cr>               " quit discarding changes
+inoremap <C-x> <esc>:qa!<cr>				" quit discarding changes
 nnoremap <C-x> :qa!<cr>
+nnoremap <A-j> :m .+1<CR>==					" move line
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
 
 
 if has("gui_running")
