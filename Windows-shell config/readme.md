@@ -1,8 +1,8 @@
 ## Installation
-[oh-my-posh] (https://www.hanselman.com/blog/how-to-make-a-pretty-prompt-in-windows-terminal-with-powerline-nerd-fonts-cascadia-code-wsl-and-ohmyposh)
-[powershell v7] (https://github.com/PowerShell/PowerShell/releases)
-[Color Tool] (https://github.com/microsoft/terminal/releases/tag/1904.29002)
-[Schemes] (https://github.com/mbadolato/iTerm2-Color-Schemes)
+[oh-my-posh](https://www.hanselman.com/blog/how-to-make-a-pretty-prompt-in-windows-terminal-with-powerline-nerd-fonts-cascadia-code-wsl-and-ohmyposh)\
+[powershell v7](https://github.com/PowerShell/PowerShell/releases)\
+[Color Tool](https://github.com/microsoft/terminal/releases/tag/1904.29002)\
+[Schemes](https://github.com/mbadolato/iTerm2-Color-Schemes)
 
 ## Theme work on PowerShell V7
 + cypher
