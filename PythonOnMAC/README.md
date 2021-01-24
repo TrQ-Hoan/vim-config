@@ -23,7 +23,7 @@ Depending on which shell you use, any of the following files may have been modif
 ~/.bash_login, ~/.bash_profile, ~/.cshrc, ~/.profile, ~/.tcshrc, and/or ~/.zprofile.
 ```
 
-## Copy or update Python Packages (PIP lib)
+## [Copy or update Python Packages](https://www.activestate.com/resources/quick-reads/how-to-update-all-python-packages/) (PIP lib)
 
 Pip can be used to upgrade and copy all packages from ver3.8 to ver3.9:
 
