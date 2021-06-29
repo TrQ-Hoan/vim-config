@@ -1,0 +1,11 @@
+{
+    "languageserver": {
+        "clangd": {
+            "command": "clangd",
+            "rootPatterns": [".vim/", ".git/", ".hg/", "compile_flags.txt", "compile_flags.json"],
+            "filetypes": ["c", "cpp", "objc", "objcpp", "h", "hpp"]
+        }
+    },
+    "suggest.noselect": false,
+    "clangd.semanticHighlighting": true
+}
