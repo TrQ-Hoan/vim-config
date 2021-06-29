@@ -15,7 +15,15 @@ choco install 7zip git fzf -y
 ```
 #### 1. C/C++ Environment
 ```
-choco intall msys2 nodejs llvm make -y
+choco intall msys2 nodejs llvm make python3 pip -y
+```
+Install neovim in pip:
+```
+pip install neovim
+```
+Install yarn in npm:
+```
+npm install -g yarn
 ```
 You can install [gcc on msys2](https://github.com/orlp/dev-on-windows/wiki/Installing-GCC--&-MSYS2) or install [gcc multilib](https://sourceforge.net/projects/mingw-w64/files/Multilib%20Toolchains%28Targetting%20Win32%20and%20Win64%29/). **After install gcc, add path gcc to environment variable.**
 
