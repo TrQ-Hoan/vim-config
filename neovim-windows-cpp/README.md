@@ -92,14 +92,5 @@ Configure file: `%APPDATA%\alacritty\alacritty.yml`.
 
 ## Install Nerd Font
 ```
-git clone https://github.com/powerline/fonts.git
-```
-```
-cd fonts
-```
-```
-Set-ExecutionPolicy RemoteSigned
-```
-```
-.\install.ps1
+Start-Process https://github.com/TrQ-Hoan/vim-config/raw/master/neovim-windows-cpp/Font-PowerLine-Nerd.zip
 ```
