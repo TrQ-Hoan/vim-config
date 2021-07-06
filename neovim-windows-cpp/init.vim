@@ -16,6 +16,7 @@ Plug 'pprovost/vim-ps1'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'voldikss/vim-floaterm'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'sheerun/vim-polyglot'
 " themes
 Plug 'morhetz/gruvbox'
 Plug 'arzg/vim-colors-xcode'
@@ -117,6 +118,7 @@ set ignorecase smartcase              " Search queries intelligently set case
 set incsearch                         " Show search results as you type
 set timeoutlen=1000 ttimeoutlen=0     " Remove timeout when hitting escape
 set showcmd                           " Show size of visual selection
+set lcs=tab:\|\                       " char indentation guides/lines
 
 " Persistent undo
 set undodir=~/.vim/undo/
