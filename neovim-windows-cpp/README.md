@@ -68,6 +68,12 @@ Add starship to powershell profile:
 ```
 Invoke-Expression (&starship init powershell)
 ```
+
+If you get error can't run ps1 in this system, try command and type `A` next to the confirmation message and press `Enter`:
+```
+set-executionpolicy remotesigned
+```
+
 Add tools of msys2 to powershell. Add path environment variable: `C:\tools\msys64\usr\bin`
 
 Creat short cut administrative [Windows Terminal](https://github.com/microsoft/terminal):
