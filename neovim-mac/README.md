@@ -2,7 +2,12 @@
 
 Install essential
 ```
-brew install npm yarn ccls clang-format nvim
+brew install wget npm yarn ccls clang-format astyle nvim
+```
+
+Download lombok.jar
+```
+wget https://projectlombok.org/downloads/lombok.jar -O ~/.local/opt/lombok.jar
 ```
 
 Clone config
@@ -11,16 +16,20 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.config}"/nvim/init.vim --create-dirs \
          https://raw.githubusercontent.com/TrQ-Hoan/vim-config/master/neovim-mac/init.vim'
 ```
 
-Install Plugin
+Install vim-plug
 ```sh
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
 
-Install coc-ccls, open nvim
+Install coc tool. open nvim
 ```
 :CocInstall coc-ccls
+:CocInstall coc-java
+:CocInstall coc-tabnine
 ```
+
+If jdt.ls not work, [download](https://download.eclipse.org/jdtls/milestones/?d) and repacle all data in `~/.config/coc/extensions/coc-java-data/server/`
 
 Fix ccls `[coc.nvim] Unable to load global extension at /home/user/.config/coc/extensions/node_modules/coc-ccls: main file ./lib/extension.js`
 ```sh
@@ -30,7 +39,7 @@ cd ~/.config/coc/extensions/node_modules/coc-ccls
 ln -s node_modules/ws/lib lib
 ```
 
-Config coc-ccls
+Config coc-setting
 ```sh
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.config}"/nvim/coc-settings.json --create-dirs \
            https://raw.githubusercontent.com/TrQ-Hoan/vim-config/master/neovim-mac/coc-settings.json'
