@@ -1,4 +1,13 @@
 {
+    //"codeLens.enable": true,
+    //"java.referencesCodeLens.enabled": true,
+    "java.errors.incompleteClasspath.severity": "ignore",
+    "java.codeGeneration.generateComments": true,
+    "java.completion.guessMethodArguments": true,
+    "java.completion.overwrite": true,
+    "java.referencesCodeLens.enabled": true,
+    "java.signatureHelp.enabled": true,
+    //"java.jdt.ls.vmargs": "-javaagent:~/.local/opt/lombok.jar",
     "languageserver":{
         "ccls": {
             "command": "ccls",
