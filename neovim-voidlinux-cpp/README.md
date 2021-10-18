@@ -23,3 +23,9 @@ Add sudo for user
 ```
 usermod -aG wheel donald
 ```
+
+Clone config
+```sh
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.config}"/nvim/init.vim --create-dirs \
+         https://raw.githubusercontent.com/TrQ-Hoan/vim-config/master/neovim-voidlinux-cpp/init.vim'
+```
