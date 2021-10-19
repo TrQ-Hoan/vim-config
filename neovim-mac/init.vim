@@ -14,15 +14,18 @@ call plug#begin('~/.config/nvim/plugged') " '~/.vim/plugged' is path of folder v
     Plug 'ryanoasis/vim-devicons'
     Plug 'voldikss/vim-floaterm'
     Plug 'itchyny/lightline.vim'
+    Plug 'mengelbrecht/lightline-bufferline'
     Plug 'Yggdroot/indentLine'
     Plug 'preservim/nerdcommenter'
     Plug 'junegunn/vim-easy-align'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'jiangmiao/auto-pairs'
     Plug 'vim-autoformat/vim-autoformat'
     Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
     " highlight syntax
     Plug 'sheerun/vim-polyglot'
+    Plug 'uiiaoo/java-syntax.vim'
     " theme | https://vimcolorschemes.com/
     Plug 'adrian5/oceanic-next-vim'
 call plug#end()
@@ -96,6 +99,9 @@ endif
 " start nvim-tree
 autocmd VimEnter * lua require'nvim-tree'.setup()
 
+highlight link javaIdentifier NONE
+"autocmd! filetype java call CSyntaxAfter()
+
 " build file
 nnoremap <F3>  :Autoformat<CR>
 autocmd filetype vim    nnoremap <F5>  :source %<CR>
@@ -154,12 +160,28 @@ set wildignore+=*/node_modules/
 "---------------------
 " Colors & Formatting
 "---------------------
-let g:oceanic_bold=1
-let g:oceanic_for_polygot=1
-let g:lightline = {'colorscheme': 'oceanicnext',}
 set background=dark
+set showtabline=2
 colorscheme oceanicnext
 highlight Comment cterm=italic gui=italic
+let g:oceanic_bold=1
+let g:oceanic_for_polygot=1
+let g:lightline = {
+      \ 'colorscheme': 'oceanicnext',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'tabline': {
+      \   'left': [ ['buffers'] ],
+      \   'right': [ ['close'] ]
+      \ },
+      \ 'component_expand': {
+      \   'buffers': 'lightline#bufferline#buffers'
+      \ },
+      \ 'component_type': {
+      \   'buffers': 'tabsel'
+      \ }
+      \ }
 
 " Coc settings -------
 inoremap <slent><expr> <TAB>
