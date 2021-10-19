@@ -32,6 +32,9 @@ You can install [gcc on msys2](https://github.com/orlp/dev-on-windows/wiki/Insta
 choco install neovim --pre -y
 ```
 
+#### 3. NeoVim GUI
+If your system run neovim-qt slow you can install [Nvy](https://github.com/RMichelsen/Nvy) for fast GUI
+
 
 ## Config [starship](https://starship.rs/) for git-bash and powershell
 
