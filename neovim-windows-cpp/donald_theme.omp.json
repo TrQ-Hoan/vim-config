@@ -1,0 +1,77 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "background": "lightMagenta",
+          // "foreground": "#ffffff",
+          "foreground": "black",
+          "leading_diamond": "",
+          "properties": {
+            "display_host": false,
+            "prefix": ""
+          },
+          "style": "diamond",
+          "trailing_diamond": "",
+          "type": "session"
+        },
+        {
+          "background": "lightYellow",
+          // "foreground": "#3f3f3f",
+          "foreground": "black",
+          "properties": {
+            "style": "folder"
+          },
+          "style": "plain",
+          "type": "path"
+        },
+        {
+          "background": "lightCyan",
+          // "foreground": "#ffffff",
+          "foreground": "black",
+          "properties": {
+            "branch_icon": "",
+            "display_status": false,
+            "postfix": ") ",
+            "prefix": " git("
+          },
+          "style": "plain",
+          "type": "git"
+        },
+        {
+          "background": "lightGreen",
+          // "foreground": "#ffffff",
+          "foreground": "black",
+          "properties": {
+            "time_format": "15:04"
+          },
+          "style": "diamond",
+          "trailing_diamond": "",
+          "type": "time"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#D4E157",
+          "properties": {
+            "always_enabled": true,
+            "display_exit_code": false,
+            "error_color": "#FF5252",
+            "prefix": "❯"
+          },
+          "style": "plain",
+          "type": "exit"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true
+}
