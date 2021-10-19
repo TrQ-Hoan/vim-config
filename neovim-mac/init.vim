@@ -46,7 +46,7 @@ call plug#end()
 "---------------------
 nmap     ga           <Plug>(EasyAlign)
 xmap     ga           <Plug>(EasyAlign)
-map      <silent><F2> :let @/ = ""<CR>
+map      <silent><F2> :nohlsearch<CR>
 map      <silent><F4> :NvimTreeToggle<CR>
 "                     Leader Mappings
 map      <Space>      <leader>
@@ -97,8 +97,8 @@ endif
 autocmd VimEnter * lua require'nvim-tree'.setup()
 
 " build file
+nnoremap <F3>  :Autoformat<CR>
 autocmd filetype vim    nnoremap <F5>  :source %<CR>
-autocmd filetype c,cpp  nnoremap <F3>  :Autoformat<CR>
 autocmd filetype c,cpp  nnoremap <F5>  :FloatermNew ./a<CR>
 autocmd filetype c      nnoremap <F9>  :!gcc -g -std=c11 % -o a -O2<CR>
 autocmd filetype c      nnoremap <F10> :FloatermNew gcc -g -O2 -std=c11 % -o a && ./a<CR>
@@ -107,7 +107,13 @@ autocmd filetype cpp    nnoremap <F9>  :!g++ -std=gnu++17 -Wshadow -Wall % -o a 
 autocmd filetype cpp    nnoremap <F10> :FloatermNew g++ -std=gnu++17 -Wshadow -Wall % -o a -O2 -Wno-unused-result && ./a < in<CR>
 autocmd filetype python nnoremap <F5>  :FloatermNew python3 %<CR>
 
-" syntax on
+let g:formatdef_c_astyle = '"astyle --style=google -pcHs4 2> /dev/null"'
+let g:formatters_cpp = ["c_astyle"]
+let g:formatters_c = ["c_astyle"]
+let g:formatdef_java_astyle = '"astyle --mode=java --style=java -pcHs4 2> /dev/null"'
+let g:formatters_java = ["java_astyle"]
+
+" syntax on 
 autocmd Filetype scss if getfsize(@%) > 300 | setlocal syntax=OFF | endif
 
 set autoread                          " Auto reload changed files
