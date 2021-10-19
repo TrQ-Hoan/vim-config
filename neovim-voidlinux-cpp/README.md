@@ -29,3 +29,19 @@ Clone config
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.config}"/nvim/init.vim --create-dirs \
          https://raw.githubusercontent.com/TrQ-Hoan/vim-config/master/neovim-voidlinux-cpp/init.vim'
 ```
+
+Astyle config `~/.astylerc`
+```
+--style=google
+--indent=spaces=4
+--indent-preprocessor
+--pad-oper
+--pad-header
+--max-instatement-indent=40
+--align-pointer=name
+--align-reference=name
+--keep-one-line-statements
+--convert-tabs
+--max-code-length=79
+--pad-method-colon=none
+```
