@@ -1,5 +1,11 @@
 # MacOS Mojave config
 
+Setting keyboard Iterm2
+
+`Preferences > Keys > General > Left Option key: Esc+`
+
+`Preferences > Keys > Key Mappings > Presets... > Natural Text Editing`
+
 Install essential
 ```
 brew install wget npm yarn ccls clang-format astyle nvim
