@@ -46,7 +46,7 @@ call plug#end()
 "---------------------
 nmap     ga           <Plug>(EasyAlign)
 xmap     ga           <Plug>(EasyAlign)
-map      <silent><F2> :nohlsearch<CR>
+map      <silent><F2> :let @/ = ""<CR>
 map      <silent><F4> :NvimTreeToggle<CR>
 "                     Leader Mappings
 map      <Space>      <leader>
