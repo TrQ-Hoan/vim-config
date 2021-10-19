@@ -8,7 +8,7 @@ Setting keyboard Iterm2
 
 Install essential
 ```
-brew install wget npm yarn ccls clang-format astyle nvim
+brew install wget npm yarn ccls fzf clang-format astyle nvim
 ```
 
 Download lombok.jar
