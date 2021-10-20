@@ -32,7 +32,7 @@ Install coc tool. open nvim
 ```
 :CocInstall coc-ccls
 :CocInstall coc-java
-:CocInstall coc-tabnine
+:CocInstall coc-snippets
 ```
 
 If jdt.ls not work, [download](https://download.eclipse.org/jdtls/milestones/?d) and repacle all data in `~/.config/coc/extensions/coc-java-data/server/`
