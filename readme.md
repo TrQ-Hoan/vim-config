@@ -13,6 +13,8 @@
 
 3) Open Vim and `:PlugInstall` it will continue the installation by itself. Wait for it to finish... and done! Quit and open vim agian, you now have your new shiny powerful Vim
 
+> [Script](./neovim-voidlinux-cpp/iosevka_install) install font Iosevka
+
 ## Windows
 **Use NeoVim**
 
