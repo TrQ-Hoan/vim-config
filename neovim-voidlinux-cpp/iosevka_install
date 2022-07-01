@@ -1,0 +1,16 @@
+#!/bin/bash
+
+version=$(curl -fsSLI -o /dev/null -w %{url_effective} https://github.com/be5invis/Iosevka/releases/latest | grep -Po 'tag\/\K(v\S+)')
+RELEASE="${version:1}"
+
+mkdir -p /tmp/iosevka-font/$version
+cd /tmp/iosevka-font/$version
+
+wget https://github.com/be5invis/Iosevka/releases/download/$version/ttf-unhinted-iosevka-term-$RELEASE.zip
+
+unzip \*.zip
+
+sudo mkdir /usr/local/share/fonts/iosevka-font
+sudo mv *.ttf /usr/local/share/fonts/iosevka-font/.
+
+sudo fc-cache -fv
